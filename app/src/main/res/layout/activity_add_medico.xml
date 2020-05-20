@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".AddMedicoActivity">
+
+    <TextView
+        android:id="@+id/tvAdcMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_marginStart="20dp"
+        android:text="@string/adicionar_medico" />
+
+    <TextView
+        android:id="@+id/tvObrigatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/campos_obrigatorios"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/tvNomeMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/nome" />
+
+    <EditText
+        android:id="@+id/etNomeMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvCRM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/crm" />
+
+    <EditText
+        android:id="@+id/etCRM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvLogradouroMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/logradouro" />
+
+    <EditText
+        android:id="@+id/etLagradouroMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvNumeroMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/numero" />
+
+    <EditText
+        android:id="@+id/etNumeroMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="10dp"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tvCidadeMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/cidade" />
+
+    <EditText
+        android:id="@+id/etCidadeMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvUfMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/uf" />
+
+    <Spinner
+        android:id="@+id/spUfMed"
+        android:layout_width="match_parent"
+        android:layout_height="35dp" />
+
+    <TextView
+        android:id="@+id/tvCelularMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/celular" />
+
+    <EditText
+        android:id="@+id/etCelularMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvFixoMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/fixo" />
+
+    <EditText
+        android:id="@+id/etFixoMed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnSalvarMedico"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/salvar" />
+</LinearLayout>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">AppConsulta</string>
+    <string name="gerenciamento_de_consultas">Gerenciamento de Consultas</string>
+    <string name="escolha_uma_op">Escolha uma opção:</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="listar">Listar</string>
+    <string name="adicionar_medico">Adicionar Médico</string>
+    <string name="campos_obrigatorios">Campos obrigatórios*</string>
+    <string name="nome">Nome*</string>
+    <string name="crm">CRM*</string>
+    <string name="logradouro">Logradouro*</string>
+    <string name="numero">Número*</string>
+    <string name="cidade">Cidade*</string>
+    <string name="uf">UF*</string>
+    <string name="celular">Celular*</string>
+    <string name="fixo">Fixo*</string>
+    <string name="salvar">Salvar</string>
+    <string name="adicionar_paciente">Adicionar Paciente</string>
+    <string name="grupo_sanguineo">Grupo sanguíneo*</string>
+    <string name="adicionar_consulta">Adicionar Consulta</string>
+    <string name="id_do_paciente">ID Paciente*</string>
+    <string name="id_do_medico">ID Médico*</string>
+    <string name="data_e_hora_inicio">Data e Hora inicio*</string>
+    <string name="data">Data*</string>
+    <string name="horario_inicio">Horário Início*</string>
+    <string name="horario_fim">Horário Fim*</string>
+    <string name="salvar_consulta">Salvar Consulta</string>
+    <string name="medicos">Médicos</string>
+    <string name="pacientes">Pacientes</string>
+    <string name="consultas">Consultas</string>
+    <string name="observacao">Observação:</string>
+
+
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".AddConsultaActivity">
+
+    <TextView
+        android:id="@+id/tvAdcConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_marginStart="20dp"
+        android:text="@string/adicionar_consulta" />
+
+    <TextView
+        android:id="@+id/tvObrigatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/campos_obrigatorios"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/tvIdPaciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/id_do_paciente" />
+
+    <EditText
+        android:id="@+id/etIDPaciente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tvIDMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/id_do_medico" />
+
+
+    <EditText
+        android:id="@+id/etIDMedico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="10dp"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/data" />
+
+    <EditText
+        android:id="@+id/etData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="10dp"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/tvHorarioInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/horario_inicio" />
+
+    <EditText
+        android:id="@+id/etHorarioInicio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="10dp"
+        android:inputType="time" />
+
+    <TextView
+        android:id="@+id/tvHorarioFim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/horario_fim" />
+
+    <EditText
+        android:id="@+id/etHorarioFim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="10dp"
+        android:inputType="time" />
+
+    <TextView
+        android:id="@+id/tvObserv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="20dp"
+        android:text="@string/observacao" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="10dp"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnSalvarConsulta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/salvar_consulta" />
+
+</LinearLayout>
+
