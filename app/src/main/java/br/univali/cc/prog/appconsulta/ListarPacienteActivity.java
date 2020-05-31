@@ -59,7 +59,7 @@ public class ListarPacienteActivity extends AppCompatActivity {
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT * FROM paciente;");
         Cursor dadosPac  = db.rawQuery(sql.toString(), null);
-        String[] from = {"id", "nome", "grp_sanguineo", "logradouro", "numero", "cidade", "uf",
+        String[] from = {"_id", "nome", "grp_sanguineo", "logradouro", "numero", "cidade", "uf",
                         "celular", "fixo"};
         int[] to = {R.id.tvListIdPac, R.id.tvListNomePac, R.id.tvListGpSanguePac, R.id.tvListLogradouroPac,
                     R.id.tvListNumeroPac, R.id.tvListCidadePac, R.id.tvListUFPac, R.id.tvListCelularPac,

@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder sql = new StringBuilder();
 
         sql.append("CREATE TABLE IF NOT EXISTS medico(");
-        sql.append("id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
+        sql.append("_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
         sql.append("nome VARCHAR(50), ");
         sql.append("crm VARCHAR(50), ");
         sql.append("logradouro VARCHAR(100), ");
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         sql.append(");");
 
         sql.append("CREATE TABLE IF NOT EXISTS paciente(");
-        sql.append("id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
+        sql.append("_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ");
         sql.append("nome VARCHAR(50), ");
         sql.append("grp_sanguineo TINYINT(1), ");
         sql.append("logradouro VARCHAR(100), ");

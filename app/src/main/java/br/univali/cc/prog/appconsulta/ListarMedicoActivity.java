@@ -61,7 +61,7 @@ public class ListarMedicoActivity extends AppCompatActivity {
         sql.append("SELECT * FROM medico;");
 
         Cursor dadosMedico = db.rawQuery(sql.toString(), null);
-        String[] from = {"id", "nome", "crm", "logradouro", "numero", "cidade", "uf", "celular", "fixo"};
+        String[] from = {"_id", "nome", "crm", "logradouro", "numero", "cidade", "uf", "celular", "fixo"};
         int[] to = {R.id.tvListID, R.id.tvListNome, R.id.tvListCRM, R.id.tvListLogradouro, R.id.tvListNumero,
                 R.id.tvListCidade, R.id.tvListUF, R.id.tvListCelular, R.id.tvListFixo};
 
