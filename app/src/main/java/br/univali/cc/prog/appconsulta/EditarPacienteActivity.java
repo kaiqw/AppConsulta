@@ -3,6 +3,7 @@ package br.univali.cc.prog.appconsulta;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class AddPacienteActivity extends AppCompatActivity {
+public class EditarPacienteActivity extends AppCompatActivity {
     SQLiteDatabase db;
     EditText etNome;
     Spinner spGpSangue;
@@ -27,7 +28,7 @@ public class AddPacienteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_paciente);
+        setContentView(R.layout.activity_editar_paciente);
 
         etNome = findViewById(R.id.etNomePaciente);
         spGpSangue = findViewById(R.id.spTipoSangue);
@@ -61,16 +62,54 @@ public class AddPacienteActivity extends AppCompatActivity {
                 new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, spUFpac);
         spUf.setAdapter(spArrayAdapUFpac);
 
-        Button btnSalvarPaciente = findViewById(R.id.btnSalvarPac);
-        btnSalvarPaciente.setOnClickListener(new View.OnClickListener() {
+        Intent valores = getIntent();
+        etNome.setText(valores.getStringExtra("nome"));
+        String gpSangueExtra = valores.getStringExtra("grp_sanguineo");
+        etLogradouro.setText(valores.getStringExtra("logradouro"));
+        etNumero.setText(valores.getStringExtra("numero"));
+        etCidade.setText(valores.getStringExtra("cidade"));
+        String ufExtra = valores.getStringExtra("uf");
+        etCelular.setText(valores.getStringExtra("celular"));
+        etFixo.setText(valores.getStringExtra("fixo"));
+
+        int aux = 0;
+        for (String gp: opGrupoSang){
+            if(gp.equals(gpSangueExtra)){
+                break;
+            }
+            aux++;
+        }
+        spGpSangue.setSelection(aux);
+
+        int aux2 = 0;
+        for (String uf: spUFpac){
+            if(uf.equals(ufExtra)){
+                break;
+            }
+            aux2++;
+        }
+        spUf.setSelection(aux2);
+
+        final String id = valores.getStringExtra("id");
+
+        Button clickEditarPac = findViewById(R.id.btnEditarPac);
+        clickEditarPac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                salvarBD();
+                salvarBD(id);
+            }
+        });
+
+        Button clickExcluirPac = findViewById(R.id.btnExcluirPac);
+        clickExcluirPac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                excluirBD(id);
             }
         });
     }
 
-    private void salvarBD(){
+    private void salvarBD(String id){
         String nome = etNome.getText().toString().trim();
         String gpSangue = spGpSangue.getSelectedItem().toString();
         String logradouro = etLogradouro.getText().toString().trim();
@@ -96,38 +135,47 @@ public class AddPacienteActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Por favor, Informe o Celular!", Toast.LENGTH_LONG).show();
         }else if (fixo.equals("")) {
             Toast.makeText(getApplicationContext(), "Por favor, Informe o Telefone Fixo!", Toast.LENGTH_LONG).show();
-        }else{
+        }else {
             db = openOrCreateDatabase("consulta.db", Context.MODE_PRIVATE, null);
             StringBuilder sql = new StringBuilder();
 
-            sql.append("INSERT INTO paciente(nome, grp_sanguineo, logradouro, numero, cidade, uf, celular, fixo) VALUES(");
-            sql.append(" ' " + nome +" ' ," );
-            sql.append(" ' " + gpSangue +" ' ," );
-            sql.append(" ' " + logradouro +" ' ," );
-            sql.append(" ' " + numero +" ' ," );
-            sql.append(" ' " + cidade +" ' ," );
-            sql.append(" ' " + uf +" ' ," );
-            sql.append(celular +" , " );
-            sql.append(fixo);
-            sql.append(");");
+            sql.append("UPDATE aluno SET ");
+            sql.append("nome= ' " + nome + " ' , ");
+            sql.append("grp_sanguineo= ' " + gpSangue + " ' , ");
+            sql.append("logradouro= ' " + logradouro + " ' , ");
+            sql.append("numero= ' " + numero + " ' , ");
+            sql.append("cidade= ' " + cidade + " ' , ");
+            sql.append("uf= ' " + uf + " ' , ");
+            sql.append("celular= ' " + celular + " ' , ");
+            sql.append("fixo= ' " + fixo + " ' , ");
+            sql.append("WHERE id = " + id + " ; ");
+
             try {
                 db.execSQL(sql.toString());
-                Toast.makeText(getApplicationContext(), "Paciente inserido com sucesso!", Toast.LENGTH_LONG).show();
-            }catch (SQLException e) {
+                Toast.makeText(getApplicationContext(), "Paciente atualizado", Toast.LENGTH_LONG).show();
+            } catch (SQLException e) {
                 Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
-            etNome.setText("");
-            spGpSangue.setSelection(0);
-            etLogradouro.setText("");
-            etNumero.setText("");
-            etCidade.setText("");
-            spUf.setSelection(0);
-            etCelular.setText("");
-            etFixo.setText("");
+            Intent i = new Intent(getApplicationContext(), ListarPacienteActivity.class);
+            startActivity(i);
             db.close();
         }
-
-
     }
 
+    private void excluirBD(String id){
+        db = openOrCreateDatabase("consulta.db", Context.MODE_PRIVATE, null);
+        StringBuilder sql = new StringBuilder();
+        sql.append("DELETE FROM paciente");
+        sql.append("WHERE id= " +id+ ";");
+
+        try {
+            db.execSQL(sql.toString());
+            Toast.makeText(getApplicationContext(), "Paciente excluído", Toast.LENGTH_LONG).show();
+        } catch (SQLException e) {
+            Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+        Intent i = new Intent(getApplicationContext(), ListarPacienteActivity.class);
+        startActivity(i);
+        db.close();
+    }
 }

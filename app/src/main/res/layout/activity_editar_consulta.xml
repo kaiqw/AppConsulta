@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="10dp"
-    tools:context=".AddConsultaActivity">
+    tools:context=".EditarConsultaActivity">
 
     <TextView
         android:id="@+id/tvAdcConsulta"
@@ -109,14 +109,24 @@
         android:inputType="textPersonName"
         android:text="" />
 
-    <Button
-        android:id="@+id/btnSalvarConsulta"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/salvar_consulta" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEditarCons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/editar" />
+
+        <Button
+            android:id="@+id/btnExcluirCons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/excluir" />
+    </LinearLayout>
 
 </LinearLayout>
-

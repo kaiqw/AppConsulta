@@ -22,13 +22,15 @@
     <string name="id_do_medico">ID Médico*</string>
     <string name="data_e_hora_inicio">Data e Hora inicio*</string>
     <string name="data">Data*</string>
-    <string name="horario_inicio">Horário Início*</string>
-    <string name="horario_fim">Horário Fim*</string>
+    <string name="horario_inicio">Data e Horário Início*</string>
+    <string name="horario_fim">Data e Horário Fim*</string>
     <string name="salvar_consulta">Salvar Consulta</string>
     <string name="medicos">Médicos</string>
     <string name="pacientes">Pacientes</string>
     <string name="consultas">Consultas</string>
     <string name="observacao">Observação:</string>
+    <string name="editar">EDITAR</string>
+    <string name="excluir">EXCLUIR</string>
 
 
 </resources>

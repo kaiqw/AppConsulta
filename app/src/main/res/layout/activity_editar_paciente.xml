@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddMedicoActivity">
+    tools:context=".AddPacienteActivity">
 
     <TextView
-        android:id="@+id/tvAdcMedico"
+        android:id="@+id/tvAdcPaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
         android:textAlignment="center"
         android:layout_marginStart="20dp"
-        android:text="@string/adicionar_medico" />
+        android:text="@string/adicionar_paciente" />
 
     <TextView
         android:id="@+id/tvObrigatorio"
@@ -25,7 +25,7 @@
         android:layout_marginTop="5dp"/>
 
     <TextView
-        android:id="@+id/tvNomeMedico"
+        android:id="@+id/tvNomePaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -34,36 +34,30 @@
         android:text="@string/nome" />
 
     <EditText
-        android:id="@+id/etNomeMedico"
+        android:id="@+id/etNomePaciente"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:textSize="15dp"
         android:ems="10"
+        android:textSize="15dp"
         android:inputType="textPersonName"
         android:layout_marginStart="10dp"
         android:text="" />
 
     <TextView
-        android:id="@+id/tvCRM"
+        android:id="@+id/tvTipoSangue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
-        android:text="@string/crm" />
+        android:text="@string/grupo_sanguineo" />
 
-    <EditText
-        android:id="@+id/etCRM"
+    <Spinner
+        android:id="@+id/spTipoSangue"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
-        android:textSize="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_marginStart="10dp"
-        android:text="" />
+        android:layout_height="40dp" />
 
     <TextView
-        android:id="@+id/tvLogradouroMed"
+        android:id="@+id/tvLogradouroPac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
@@ -71,7 +65,7 @@
         android:text="@string/logradouro" />
 
     <EditText
-        android:id="@+id/etLogradouroMed"
+        android:id="@+id/etLogradouroPac"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:textSize="15dp"
@@ -81,7 +75,7 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/tvNumeroMed"
+        android:id="@+id/tvNumeroPac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
@@ -89,7 +83,7 @@
         android:text="@string/numero" />
 
     <EditText
-        android:id="@+id/etNumeroMed"
+        android:id="@+id/etNumeroPac"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:textSize="15dp"
@@ -98,7 +92,7 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/tvCidadeMed"
+        android:id="@+id/tvCidadePac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
@@ -106,7 +100,7 @@
         android:text="@string/cidade" />
 
     <EditText
-        android:id="@+id/etCidadeMed"
+        android:id="@+id/etCidadePac"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:textSize="15dp"
@@ -116,7 +110,7 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/tvUfMed"
+        android:id="@+id/tvUfPac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
@@ -124,12 +118,13 @@
         android:text="@string/uf" />
 
     <Spinner
-        android:id="@+id/spUfMed"
+        android:id="@+id/spUfPac"
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="38dp"/>
+
 
     <TextView
-        android:id="@+id/tvCelularMed"
+        android:id="@+id/tvCelularPac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
@@ -137,7 +132,7 @@
         android:text="@string/celular" />
 
     <EditText
-        android:id="@+id/etCelularMed"
+        android:id="@+id/etCelularPac"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:textSize="15dp"
@@ -147,7 +142,7 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/tvFixoMed"
+        android:id="@+id/tvFixoPac"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15dp"
@@ -155,7 +150,7 @@
         android:text="@string/fixo" />
 
     <EditText
-        android:id="@+id/etFixoMed"
+        android:id="@+id/etFixoPac"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:textSize="15dp"
@@ -164,11 +159,25 @@
         android:layout_marginStart="10dp"
         android:text="" />
 
-    <Button
-        android:id="@+id/btnSalvarMedico"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/salvar" />
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEditarPac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="@string/editar" />
+
+        <Button
+            android:id="@+id/btnExcluirPac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:text="@string/excluir" />
+    </LinearLayout>
 </LinearLayout>
