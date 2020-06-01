@@ -48,7 +48,7 @@ public class EditarConsultaActivity extends AppCompatActivity {
         });
 
         Button clickExcluirConsulta = findViewById(R.id.btnExcluirCons);
-        clickEditarConsulta.setOnClickListener(new View.OnClickListener() {
+        clickExcluirConsulta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 excluirBD(id);
